@@ -1,0 +1,33 @@
+{% extends "weddingApp/weddingApp_base.html" %}
+
+{% block content %}
+  <h1>RSVP</h1>
+  <form method="POST" id='rsvpForm'>
+    {% csrf_token %}
+
+    <label class="control-label" for="id_name">Party Name:</label>
+    <input type="text" name="name" maxlength="200" class="form-control" placeholder=""  required id ="id_name">
+
+    <label class="control-label" for="id_partySize">How many guests are in your party?</label>
+    <input type="text" name="partySize" maxlength="200" class="form-control" placeholder=""  required id ="id_partySize">
+
+    <label class="control-label" for="id_partyNames">Please list the name of each guest in your party</label>
+    <input type="text" name="partyNames" maxlength="200" class="form-control" placeholder="Sarah, Bill, John..."  required id ="id_partyNames">
+
+    <label class="control-label" for="id_allergy">Please describe any allergies we should be aware of, if any</label>
+    <input type="text" name="allergy" maxlength="200" class="form-control" placeholder="ex: Peanut..."  required id ="id_allergy">
+
+    <label class="control-label" for="id_specialRequest">Do you have any special requests?</label>
+    <input type="text" name="speacialRequest" maxlength="200" class="form-control" placeholder="ex: Wheelchair..."  required id ="id_specialRequest">
+
+
+
+
+    <button type="submit" class="save btn btn-default" value="Save">Submit</button>
+  </form>
+
+
+
+
+
+{% endblock %}
